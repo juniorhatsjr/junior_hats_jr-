@@ -246,6 +246,28 @@ footer a{
     </div>
   </article>
 
+<article class="product">
+  <img id="imgPulsera" src="https://imgur.com/vSYoABz.jpg">
+
+  <div class="p-body">
+    <div class="p-title">Pulsera Tipo Van Cleef</div>
+    <div class="price">$350 MXN</div>
+
+    <!-- SELECTOR DE COLOR -->
+    <select id="colorPulsera" onchange="cambiarColor()">
+      <option value="Negro">Negro</option>
+      <option value="oro">oro</option>
+      <option value="Rojo">Rojo</option>
+      <option value="oro rosa">rosa</option>
+    </select>
+
+    <br><br>
+
+    <a id="btnPulsera" class="btn" target="_blank">Comprar</a>
+  </div>
+</article>
+
+
 </section>
 
 <footer>
@@ -273,8 +295,27 @@ function toggleAudio(){
     document.getElementById("mute").textContent="🔇 MUTE";
   }
 }
+function cambiarColor(){
+  const color = document.getElementById("colorPulsera").value;
+
+  // CAMBIO DE IMAGEN SEGÚN COLOR
+  const imagenes = {
+    "Negro": "https://imgur.com/F3dmF2Z.jpg",
+    "oro": "https://imgur.com/8t50adU.jpg",
+    "Rojo": "https://imgur.com/vSYoABz.jpg",
+    "oro rosa": "https://imgur.com/vI8GBcM.jpg"
+  };
+
+  document.getElementById("imgPulsera").src = imagenes[color];
+
+  // MENSAJE WHATSAPP
+  const mensaje = `Hola quiero comprar la pulsera color ${color}`;
+  const link = `https://api.whatsapp.com/send?phone=524428655081&text=${encodeURIComponent(mensaje)}`;
+
+  document.getElementById("btnPulsera").href = link;
+}
+
 </script>
 
 </body>
 </html>
-
