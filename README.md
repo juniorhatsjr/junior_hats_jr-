@@ -251,7 +251,7 @@ footer a{
 
   <div class="p-body">
     <div class="p-title">Pulsera Tipo Van Cleef</div>
-    <div class="price">$350 MXN</div>
+    <div class="price">$2,000MXN</div>
 
     <!-- SELECTOR DE COLOR -->
     <select id="colorPulsera" onchange="cambiarColor()">
